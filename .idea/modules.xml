@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Neximo.iml" filepath="$PROJECT_DIR$/.idea/Neximo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Neximo/.idea/Neximo.iml" filepath="$PROJECT_DIR$/../Neximo/.idea/Neximo.iml" />
     </modules>
   </component>
 </project>
