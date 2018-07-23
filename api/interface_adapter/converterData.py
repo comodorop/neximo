@@ -5,7 +5,7 @@ from api.infraestructure.models.lesson import Lesson
 from api.infraestructure.models.questions import Question
 from api.infraestructure.models.typeanswer import Typeanswer
 from api.infraestructure.models.answer import Answer
-
+import uuid
 
 
 class Converter(object):
@@ -15,7 +15,7 @@ class Converter(object):
         if 'uuid' in jsonData:
             user.uuid = jsonData["uuid"]
         else:
-            user.uuid = " "
+            user.uuid = uuid.uuid4()
         user.password = jsonData["password"]
         user.uuidRol = jsonData["uuidRol"]
         user.user = jsonData["user"]
@@ -26,7 +26,7 @@ class Converter(object):
         if 'uuid' in jsonData:
             course.uuid = jsonData["uuid"]
         else:
-            course.uuid = " "
+            course.uuid = uuid.uuid4()
         course.name = jsonData["name"]
         course.depend = str(jsonData["depend"])
         course.uuidCourse = jsonData["uuidCourse"]
@@ -37,7 +37,7 @@ class Converter(object):
         if 'uuid' in jsonData:
             lesson.uuid = jsonData["uuid"]
         else:
-            lesson.uuid = " "
+            lesson.uuid = uuid.uuid4()
         lesson.uuidCourse = jsonData["uuidCourse"]
         lesson.name = jsonData["name"]
         lesson.depend = jsonData["depend"]
@@ -49,7 +49,7 @@ class Converter(object):
         if 'uuid' in jsonData:
             question.uuid = jsonData["uuid"]
         else:
-            question.uuid = " "
+            question.uuid = uuid.uuid4()
         question.question = jsonData["question"]
         question.score = jsonData["score"]
         question.uuidLesson = jsonData["uuidLesson"]
@@ -60,7 +60,7 @@ class Converter(object):
         if 'uuid' in jsonData:
             type.uuid = jsonData["uuid"]
         else:
-            type.uuid = " "
+            type.uuid = uuid.uuid4()
         type.name = jsonData["name"]
         return type
 
@@ -69,7 +69,7 @@ class Converter(object):
         if 'uuid' in jsonData:
             answer.uuid = jsonData["uuid"]
         else:
-            answer.uuid = " "
+            answer.uuid = uuid.uuid4()
         answer.answer = jsonData["answer"]
         answer.isCorrect = jsonData["isCorrect"]
         answer.uuidQuestion = jsonData["uuidQuestion"]
