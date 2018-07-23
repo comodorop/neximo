@@ -24,6 +24,12 @@ Para instalar las dependencias ejecutar el siguiente comando:
 pip install -r requirements.txt
 ```
 
+Una vez que el proyecto haya instalado las dependencias, ejecutar el siguietne comando, que nos permitira levantar el servidor y empezar a consumir las apis
+
+```
+gunicorn main:app --reload
+```
+
 Observaciones:
 
 En caso de que estes utilizando linux o mac, debes dar permisos de escritura o lectura y ejecutarlo en modo superusuario
