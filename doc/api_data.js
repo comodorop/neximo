@@ -1,0 +1,270 @@
+define({ "api": [
+  {
+    "type": "post",
+    "url": "http://127.0.0.1:8000/answer",
+    "title": "Answer",
+    "version": "1.0.0",
+    "name": "Answer",
+    "group": "Answer",
+    "description": "<p>Nos va a permitir registrar las respuestas de las preguntas e indicar cual es la correcta</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "uuidQuestion",
+            "description": "<p>Indica a que pregunta se le va a vincular la respuesta</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "answer",
+            "description": "<p>La descripcion de la respuesta</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Int",
+            "optional": false,
+            "field": "isCorrect",
+            "description": "<p>Indica si la respuesta es la correcta o no. 0 no es correcta 1 si es correcta</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"200\",\n    \"msg\": \"New register\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./documentation/index.js",
+    "groupTitle": "Answer"
+  },
+  {
+    "type": "post",
+    "url": "http://127.0.0.1:8000/course",
+    "title": "course.",
+    "version": "1.0.0",
+    "name": "course",
+    "group": "Course",
+    "description": "<p>Nos va a permitir crear cursos.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Nombre del curso</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "depend",
+            "description": "<p>Indica si el curso es dependiente de otro: 1 que si es dependiente 0 que no es dependiente</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "uuidCourse",
+            "description": "<p>Nos va a indicar si es dependiente el curso de que curso se hace referencia</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"200\",\n    \"msg\": \"New register\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./documentation/index.js",
+    "groupTitle": "Course"
+  },
+  {
+    "type": "post",
+    "url": "http://127.0.0.1:8000/lesson",
+    "title": "lesson.",
+    "version": "1.0.0",
+    "name": "lesson",
+    "group": "Lesson",
+    "description": "<p>Nos va a permitir crear una leccion</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "uuidCourse",
+            "description": "<p>El curso con que queremos vicular esta leccion</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>El nombre de la leccion</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "depend",
+            "description": "<p>Indica si la leccion es dependiente de otro: 1 que si es dependiente 0 que no es dependiente</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "uuidLesson",
+            "description": "<p>Nos va a ayudar a vincular con que otra leccion esta vinculada.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"200\",\n    \"msg\": \"New register\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./documentation/index.js",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
+    "url": "http://127.0.0.1:8000/answer",
+    "title": "login.",
+    "version": "1.0.0",
+    "name": "login",
+    "group": "Login",
+    "description": "<p>Nos va a permitir loguearnos.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "user",
+            "description": "<p>Nombre del usuario</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "paswword",
+            "description": "<p>Contraseña</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"200\",\n    \"msg\": \"Acceso correcto\",\n    \"data\": [\n        {\n            \"token\": \"\\\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoicGpndCIsInBhc3N3b3JkIjoiMTIzNDU2In0.3GoXdwjFeah3vNKt0mqGzLzMNPwEretf7VQUGLZzfws\\\"\",\n            \"status\": 201\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./documentation/index.js",
+    "groupTitle": "Login"
+  },
+  {
+    "type": "post",
+    "url": "http://127.0.0.1:8000/questions",
+    "title": "question.",
+    "version": "1.0.0",
+    "name": "question",
+    "group": "Question",
+    "description": "<p>Nos va a permitir crear preguntas acerca de la leccion</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "question",
+            "description": "<p>El nombre de la pregunta</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "score",
+            "description": "<p>Indica el puntuaje de la pregunta</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "uuidLesson",
+            "description": "<p>Indica a que leccion le pertenece la pregunta</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"200\",\n    \"msg\": \"New register\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./documentation/index.js",
+    "groupTitle": "Question"
+  },
+  {
+    "type": "post",
+    "url": "http://127.0.0.1:8000/type",
+    "title": "TypeAnswer.",
+    "version": "1.0.0",
+    "name": "Type_answer",
+    "group": "Type_answer",
+    "description": "<p>Nos va a permitir crear los tipos de respuestas que existen en el cuestionario</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>El nombre de la respuesta Unico, Multiple</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"200\",\n    \"msg\": \"New register\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./documentation/index.js",
+    "groupTitle": "Type_answer"
+  }
+] });
