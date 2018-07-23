@@ -14,7 +14,7 @@ Al analizar el desarrollo se llego a al siguiente mapeo de las tablas:
 
 ![](/img/diagrama.png)
 
-Instalación del proyecto:
+**Instalación del proyecto:**
 
 En el proyecto podremos encontrar un archivo llamado **requiremets.txt **donde trae todas las dependencias correspondientes para el correcto funcionamiento del proyecto.
 
@@ -33,4 +33,14 @@ gunicorn main:app --reload
 Observaciones:
 
 En caso de que estes utilizando linux o mac, debes dar permisos de escritura o lectura y ejecutarlo en modo superusuario
+
+Justificación de las tecnologias.
+
+Se implemento falcon por su sencilles de crear las apis. De igual manera de tomo en cuenta mucho la parte del performance, ya que al comparar sobre tecnologias como flask, django flask es un 40% mas rapido a comparacion de ellos.
+
+SqlAlchemy, se implemento este orm, con la finalidad de tener un mejor control en las consultas y mapeo de mis tablas. Cabe destacar que Alchemy me permite gestionar las  conecciones como un pool. El se encargara de repartirlas y reclamarlas cuando no son usadas y haci tener una mejor concurrencia en las peticiones.
+
+
+
+
 
