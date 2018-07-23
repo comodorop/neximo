@@ -34,13 +34,13 @@ Observaciones:
 
 En caso de que estes utilizando linux o mac, debes dar permisos de escritura o lectura y ejecutarlo en modo superusuario
 
-Justificación de las tecnologias.
+#### Arquitectura del proyecto:
 
-Se implemento falcon por su sencilles de crear las apis. De igual manera de tomo en cuenta mucho la parte del performance, ya que al comparar sobre tecnologias como flask, django flask es un 40% mas rapido a comparacion de ellos.
+Se implemento la arquitectura **clean Architecture, **con la finalidad de tener un mejor orden en mi codigo y que cada capa funcione correctamente y no estar contaminandola.
 
-SqlAlchemy, se implemento este orm, con la finalidad de tener un mejor control en las consultas y mapeo de mis tablas. Cabe destacar que Alchemy me permite gestionar las  conecciones como un pool. El se encargara de repartirlas y reclamarlas cuando no son usadas y haci tener una mejor concurrencia en las peticiones.
+#### Justificación de las tecnologias.
 
+Se implemento **falcon** por su sencilles de crear las apis. De igual manera se tomo en cuenta mucho la parte del performance, ya que al comparar sobre tecnologias como flask, django flask es un 40% mas rapido a comparacion de ellos.
 
-
-
+**SqlAlchemy**, se implemento este orm, con la finalidad de tener un mejor control en las consultas y mapeo de mis tablas. Cabe destacar que Alchemy me permite gestionar las  conecciones como un pool. El se encargara de repartirlas y reclamarlas cuando no son usadas y haci tener una mejor concurrencia en las peticiones.
 
